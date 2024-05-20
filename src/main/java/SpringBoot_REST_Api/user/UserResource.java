@@ -1,10 +1,11 @@
 package SpringBoot_REST_Api.user;
 
+import java.net.URI;
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 public class UserResource {
@@ -25,5 +26,20 @@ public class UserResource {
     @GetMapping("/users/{id}")
     public User retrieveUser(@PathVariable int id) {
         return service.findOne(id);
+    }
+
+    @PostMapping("/users")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User savedUser = service.save(user);
+        //Take current URI request which is /users
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                //append /{id} to the path
+                .path("/{id}")
+                //and set id of the created resource
+                .buildAndExpand(savedUser.getId())
+                //return URI
+                .toUri();
+
+        return ResponseEntity.created(location).build();
     }
 }
