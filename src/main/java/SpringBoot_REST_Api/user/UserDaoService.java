@@ -30,6 +30,6 @@ public class UserDaoService {
         /* Is id for both users same? */
         Predicate<? super User> predicate = user -> user.getId().equals(id);
         /* taking the list and converting it to stream , applying predicate: from the List<users> find a user whose ID matches */
-        return users.stream().filter(predicate).findFirst().get();
+        return users.stream().filter(predicate).findFirst().orElse(null);
     }
 }
