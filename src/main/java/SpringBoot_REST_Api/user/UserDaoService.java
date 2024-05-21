@@ -32,4 +32,9 @@ public class UserDaoService {
         /* taking the list and converting it to stream , applying predicate: from the List<users> find a user whose ID matches */
         return users.stream().filter(predicate).findFirst().orElse(null);
     }
+
+    public void deleteById(int id) {
+        Predicate<? super User> predicate = user -> user.getId().equals(id);
+        users.removeIf(predicate);
+    }
 }
