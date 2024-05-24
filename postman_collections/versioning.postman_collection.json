@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "2d6ae2b7-103e-41ca-92b6-1c130a07826a",
+		"name": "versioning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29879856"
+	},
+	"item": [
+		{
+			"name": "URL_Versioning",
+			"item": [
+				{
+					"name": "V1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"person"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/person",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"person"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Query_Param_Versioning",
+			"item": [
+				{
+					"name": "V1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person?version=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							],
+							"query": [
+								{
+									"key": "version",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/person?version=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person"
+							],
+							"query": [
+								{
+									"key": "version",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom_Headers_Versioning",
+			"item": [
+				{
+					"name": "V1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-VERSION",
+								"value": "1"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/person/header",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"header"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-VERSION",
+								"value": "2"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/person/header",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"header"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Media_Type_Versioning",
+			"item": [
+				{
+					"name": "V1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.company.app-v1+json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/person/accept",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "V2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.company.app-v2+json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/person/accept",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"person",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

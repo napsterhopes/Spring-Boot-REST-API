@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "b0e72762-a291-499c-bd38-812d21b14bab",
+		"name": "hello-world",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29879856"
+	},
+	"item": [
+		{
+			"name": "hello-world-internationalized",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hello-world-internationalized",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello-world-internationalized"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
