@@ -37,6 +37,14 @@ public class User {
         return id;
     }
 
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }
